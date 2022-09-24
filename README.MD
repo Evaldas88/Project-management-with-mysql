@@ -31,8 +31,9 @@ This project was created with :
             git clone  https://github.com/Evaldas88/Project-management-with-mysql.git  
 
 * Run XAMPP and start Apache and MySQL server's.
-* Open your browser and in the searchbar paste this :
-                       http://localhost/Project-management-with-mysql/index.php
+* Open your browser and in the searchbar paste this:
+
+                        http://localhost/Project-management-with-mysql/index.php
 
 #  Screenshots how to import database to MySQL Workbench
 
