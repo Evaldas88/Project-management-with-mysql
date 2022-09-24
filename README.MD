@@ -33,7 +33,7 @@ This project was created with :
 * Run XAMPP and start Apache and MySQL server's.
 * Open your browser and in the searchbar paste this:
 
-                        http://localhost/Project-management-with-mysql/index.php
+        http://localhost/Project-management-with-mysql/index.php
 
 #  Screenshots how to import database to MySQL Workbench
 
