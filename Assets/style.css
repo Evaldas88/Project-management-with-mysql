@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav ul a:hover {
+    color:  #c35635 !important;  
+}
+nav a.active {
+    color: rgba(255, 115, 0, 0.821) !important;
+}   
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+  }
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+     color: white;
+    text-align: center;
+    line-height: 2.4;
+  }

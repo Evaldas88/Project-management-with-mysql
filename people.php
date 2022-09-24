@@ -4,54 +4,21 @@ require_once "./Assets/delete.php";
 
 $sql = "SELECT  People.id, People.project_id, CONCAT(first_name, ' ', last_name) AS Full_Name FROM People ";
 $result = mysqli_query($conn, $sql);
-// create people logic 
-$error = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+require_once "./Assets/create.php";
 
-  $input_name = trim($_POST["firstname"]);
-  $input_lastname = trim($_POST["lastname"]);
-  $project = trim($_POST['create']);
-  if (empty($input_name) or empty($input_lastname)) {
-    $error = "Please make sure all fields are filled   correctly!";
-  } elseif(empty($project)){
-    $error = "First create project!";
-  }
-  else {
-    $stmt = $conn->prepare("INSERT INTO People (first_name, last_name, project_id) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssi", $first_name, $last_name, $project_id);
-    $first_name = $_POST['firstname'];
-    $last_name = $_POST['lastname'];
-    $project_id = $_POST['project'];
-    $stmt->execute();
-    $stmt->close();
-    header('Location: ' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING']);
-    die;
-  }
-}
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php require_once "./Assets/include/header.php"; ?>
+<title>People</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-  <title>Projects</title>
-  <style>
-    <?php include('./Assets/style.css') ?>
-  </style>
 </head>
 
 <body>
-  <?php require_once "./Assets/navbar.php"; ?>
+<?php require_once "./Assets/include/navbar.php"; ?>
 
   <div class="container pt-1">
     <table class="table  table-bordered mt-5 text-center">
@@ -111,6 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
   </div>
+  <?php require_once "./Assets/include/footer.php"; ?>
+
 </body>
 
 </html>
