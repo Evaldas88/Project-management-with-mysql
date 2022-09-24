@@ -25,11 +25,11 @@ This project was created with :
 
 * To run App you need to have XAMPP and MySQL Workbench.
 * Create new folder  or download to your XAMPP directory (C:\xampp\htdocs). 
-* With Visual Studio Code
+* With Visual Studio Code.
 * Open terminal and paste this:
 
             git clone  https://github.com/Evaldas88/Project-management-with-mysql.git  
-
+* Import project.sql in to the MySQL Workbench.
 * Run XAMPP and start Apache and MySQL server's.
 * Open your browser and in the searchbar paste this:
 
