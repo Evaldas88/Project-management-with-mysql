@@ -1,10 +1,11 @@
 <?php
 require_once "./Assets/db.php";
+require_once "./Assets/create-people.php";
+
 require_once "./Assets/delete.php";
 
 $sql = "SELECT  People.id, People.project_id, CONCAT(first_name, ' ', last_name) AS Full_Name FROM People ";
 $result = mysqli_query($conn, $sql);
-require_once "./Assets/create.php";
 
 
 ?>

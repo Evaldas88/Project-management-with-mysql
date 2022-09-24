@@ -1,12 +1,13 @@
 <?php
 require_once "./Assets/db.php";
+require_once "./Assets/create-project.php";
 
 $sql = "SELECT projects.id, project_name FROM projects 
  LEFT JOIN people on project_id = People.project_id
  GROUP BY Project_Name
  ORDER BY projects.id";
 $result = mysqli_query($conn, $sql);
-require_once "./Assets/create.php";
+
 
 ?>
 <!DOCTYPE html>
