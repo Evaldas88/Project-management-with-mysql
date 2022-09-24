@@ -1,5 +1,5 @@
 <?php
-require_once "./Assets/db.php";
+include "./Assets/db.php";
 
 
 $sql = "SELECT projects.id, project_name,  GROUP_CONCAT(CONCAT_WS(' ', people.first_name, people.last_name) SEPARATOR '; ' ) AS Group_people  FROM projects 
@@ -12,14 +12,14 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
 
 <head>
-<?php require_once "./Assets/include/header.php"; ?>
+<?php include "./Assets/include/header.php"; ?>
 <title>View</title>
 
 </head>
 
 <body>
-  <?php require_once "./Assets/include/navbar.php"; ?>
-
+  <?php include "./Assets/include/navbar.php"; ?>
+ 
   <div class="container pt-1">
     <table class="table  table-bordered mt-5 text-center">
       <thead>
@@ -43,7 +43,7 @@ $result = mysqli_query($conn, $sql);
         ?>
       </tbody>
     </table>
-    <?php require_once "./Assets/include/footer.php"; ?>
+    <?php include "./Assets/include/footer.php"; ?>
 
 </body>
 

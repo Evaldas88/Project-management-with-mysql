@@ -5,6 +5,8 @@ if (isset($_GET['action']) and $_GET['action'] == 'delete') {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $_GET['id']);
     $res = $stmt->execute();
+    $_SESSION['message'] = "People has been deleted";
+    $_SESSION['type'] = "danger";
     $stmt->close();
     mysqli_close($conn);
     header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
@@ -19,6 +21,8 @@ if (isset($_GET['action']) and $_GET['action'] == 'delete') {
         $res = $stmt->execute();
         $stmt->close();
         mysqli_close($conn);
+        $_SESSION['message'] = "Project has been deleted";
+        $_SESSION['type'] = "danger";
         header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
         die();
       }

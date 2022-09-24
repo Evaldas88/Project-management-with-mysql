@@ -17,6 +17,8 @@
          $last_name = $_POST['lastname'];
          $project_id = $_POST['project'];
          $stmt->execute();
+         $_SESSION['message'] = "People has been created";
+         $_SESSION['type'] = "success";
          $stmt->close();
          header('Location: ' . $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING']);
          die;

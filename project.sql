@@ -41,7 +41,7 @@ CREATE TABLE `people` (
 
 LOCK TABLES `people` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
-INSERT INTO `people` VALUES (1,'John','Wick',1),(2,'Liza','Kendrick',5),(3,'Tom','Cruse',4),(4,'Lara','Croft',1),(5,'Keanu1','Reaves1',5);
+INSERT INTO `people` VALUES (1,'John','Wick',1),(2,'Liza','Kendrick',5),(3,'Tom','Cruse',4),(4,'Lara','Croft',1),(5,'Keanu','Reaves',5);
 /*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-24 10:11:05
+-- Dump completed on 2022-09-24 10:30:44

@@ -1,8 +1,8 @@
 <?php
-require_once "./Assets/db.php";
-require_once "./Assets/create-people.php";
-
-require_once "./Assets/delete.php";
+session_start();
+include "./Assets/db.php";
+include "./Assets/create-people.php";
+include "./Assets/delete.php";
 
 $sql = "SELECT  People.id, People.project_id, CONCAT(first_name, ' ', last_name) AS Full_Name FROM People ";
 $result = mysqli_query($conn, $sql);
@@ -13,13 +13,14 @@ $result = mysqli_query($conn, $sql);
 <html lang="en">
 
 <head>
-<?php require_once "./Assets/include/header.php"; ?>
+<?php include "./Assets/include/header.php"; ?>
 <title>People</title>
 
 </head>
 
 <body>
-<?php require_once "./Assets/include/navbar.php"; ?>
+<?php include "./Assets/include/navbar.php";
+include "./Assets/message.php" ?>
 
   <div class="container pt-1">
     <table class="table  table-bordered mt-5 text-center">
@@ -79,8 +80,8 @@ $result = mysqli_query($conn, $sql);
       </div>
     </div>
   </div>
-  <?php require_once "./Assets/include/footer.php"; ?>
-
+  <?php include "./Assets/include/footer.php";
+  include "./Assets/include/script.php" ?>
 </body>
 
 </html>

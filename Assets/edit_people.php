@@ -1,6 +1,6 @@
 <?php
-require_once "db.php";
-
+session_start();
+include "db.php";
 $sql = 'SELECT first_name, last_name,  project_id FROM people WHERE id = ' . $_GET['id'];
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -20,6 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare('UPDATE people SET first_name = "' . $_POST['first_name'] . '", last_name = "' . $_POST['last_name'] .  '", project_id = "' . $_POST['project_id'] . '" WHERE id = ' . $_GET['id'] . ';');
     $stmt->execute();
+    $_SESSION['message'] = "Record has been updated";
+    $_SESSION['type'] = "warning";
     $stmt->close();
     unset($_POST['first_name']);
     unset($_POST['last_name']);
@@ -31,15 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<?php require_once "./include/header.php"; ?>
+<?php include "./include/header.php"; ?>
 <title>People</title>
-
 </head>
-
 <body>
-  
   <div class=" container ">
     <div class="position-absolute top-50 start-50 translate-middle">
       <div class="card bg-success p-2 text-dark bg-opacity-25">

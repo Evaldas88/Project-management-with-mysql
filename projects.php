@@ -1,6 +1,7 @@
 <?php
-require_once "./Assets/db.php";
-require_once "./Assets/create-project.php";
+session_start();
+include "./Assets/db.php";
+include "./Assets/create-project.php";
 
 $sql = "SELECT projects.id, project_name FROM projects 
  LEFT JOIN people on project_id = People.project_id
@@ -11,13 +12,16 @@ $result = mysqli_query($conn, $sql);
 
 ?>
 <!DOCTYPE html>
-<?php require_once "./Assets/include/header.php"; ?>
+<?php include "./Assets/include/header.php"; ?>
 <title>Projects</title>
 
 </head>
 
 <body>
-<?php require_once "./Assets/include/navbar.php"; ?>
+<?php include "./Assets/include/navbar.php"; 
+  include "./Assets/message.php";?>
+ 
+ 
   <div class="container pt-1">
     <table class="table  table-bordered mt-5 text-center">
       <thead>
@@ -57,8 +61,8 @@ $result = mysqli_query($conn, $sql);
          </div>
     </div>
   </div>
-  <?php require_once "./Assets/include/footer.php"; ?>
-            
-</body>
+  <?php include "./Assets/include/footer.php"; 
+  include "./Assets/include/script.php"?>
+ </body>
 
 </html>
