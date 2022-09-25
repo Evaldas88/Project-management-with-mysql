@@ -44,4 +44,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 }
-include "./Assets/delete.php";
+include "./Assets/app/delete.php";

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include "./Assets/db.php";
-include "./Assets/create-project.php";
+include "./Assets/app/db.php";
+include "./Assets/app/create-project.php";
 
 $sql = "SELECT projects.id, project_name FROM projects 
  LEFT JOIN people on project_id = People.project_id
@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $sql);
 
 <body>
 <?php include "./Assets/include/navbar.php"; 
-  include "./Assets/message.php";?>
+  include "./Assets/app/message.php";?>
  
  
   <div class="container pt-1">

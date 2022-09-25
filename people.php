@@ -1,8 +1,8 @@
 <?php
 session_start();
-include "./Assets/db.php";
-include "./Assets/create-people.php";
-include "./Assets/delete.php";
+include "./Assets/app/db.php";
+include "./Assets/app/create-people.php";
+include "./Assets/app/delete.php";
 
 $sql = "SELECT  People.id, People.project_id, CONCAT(first_name, ' ', last_name) AS Full_Name FROM People ";
 $result = mysqli_query($conn, $sql);
@@ -20,7 +20,7 @@ $result = mysqli_query($conn, $sql);
 
 <body>
 <?php include "./Assets/include/navbar.php";
-include "./Assets/message.php" ?>
+include "./Assets/app/message.php" ?>
 
   <div class="container pt-1">
     <table class="table  table-bordered mt-5 text-center">
@@ -47,7 +47,7 @@ include "./Assets/message.php" ?>
             . '<td>' . $row['fullname'] .  '</td>'
             . '<td>' .  $row['project_name'] . '</td>'
             . '<td>'
-            . '<a href="./assets/edit_people.php?id='  . $row['id'] . '"><button class="btn btn-info me-1 "><i class="bi bi-pen"></i></button></a>'
+            . '<a href="./assets/app/edit_people.php?id='  . $row['id'] . '"><button class="btn btn-info me-1 "><i class="bi bi-pen"></i></button></a>'
             . '<a href="?action=delete&id='  . $row['id'] . '"><button class="btn btn-danger  "><i class="bi bi-trash3-fill"></i></button></a>'
             . '</td>'
             . '</tr>';

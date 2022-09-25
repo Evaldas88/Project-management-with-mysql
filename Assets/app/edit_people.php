@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($_POST['first_name']);
     unset($_POST['last_name']);
     unset($_POST['project_id']);
-    header('location:../people.php');
+    header('location:../../people.php');
     exit;
   }
 }
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include "./include/header.php"; ?>
+<?php include "../include/header.php"; ?>
 <title>People</title>
 </head>
 <body>

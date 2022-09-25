@@ -1,5 +1,5 @@
 <?php
-include "./Assets/db.php";
+include "./Assets/app/db.php";
 
 
 $sql = "SELECT projects.id, project_name,  GROUP_CONCAT(CONCAT_WS(' ', people.first_name, people.last_name) SEPARATOR '; ' ) AS Group_people  FROM projects 
